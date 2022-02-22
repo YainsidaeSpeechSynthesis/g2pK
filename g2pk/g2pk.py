@@ -35,7 +35,7 @@ class G2p(object):
     def get_mecab(self):
         if os.name == 'nt':
             from konlpy.tag import Mecab
-            mecab_ko_dic_path = os.environ['MECAB_KO_DIC_PATH'] if 'MECAB_KO_DIC_PATH' in os.environ else r"C:\mecab\mecab-ko-dic"
+            mecab_ko_dic_path = os.environ['MECAB_KO_DIC_PATH'] if 'MECAB_KO_DIC_PATH' in os.environ else os.path.join(os.getcwd(),r".\mecab\mecab-ko-dic")
             return Mecab(dicpath=mecab_ko_dic_path)
         else:
             import mecab
